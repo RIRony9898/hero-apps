@@ -14,8 +14,7 @@ const AppDetails = () => {
 
   if (loading) return <p>Loading.......</p>;
 
-  const { title, image, downloads, ratingAvg, description, reviews, size, companyName } =
-    app || {};
+  const { title, image, downloads, ratingAvg, description, reviews, size, companyName } = app || {};
   return (
     <div>
       <Container>
@@ -57,7 +56,7 @@ const AppDetails = () => {
         <div>
           <h3 className="text-3xl font-bold mb-5">Ratings</h3>
           <div>
-            <RatingChart/>
+            <RatingChart ratings={app.ratings} />
           </div>
         </div>
         {/* description */}
