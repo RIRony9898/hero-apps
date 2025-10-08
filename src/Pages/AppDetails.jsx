@@ -53,7 +53,7 @@ const AppDetails = () => {
           </div>
         </div>
         {/* ratings graph */}
-        <div>
+        <div className="my-10 border-y border-gray-300 py-10">
           <h3 className="text-3xl font-bold mb-5">Ratings</h3>
           <div>
             <RatingChart ratings={app.ratings} />
