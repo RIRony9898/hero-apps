@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../Components/Container";
 import useApps from "../hooks/useApps";
 import AppsCard from "../Components/AppsCard";
 
 const AppsPage = () => {
   const { apps, loading } = useApps();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredApps = apps.filter((app) =>
+    app.title.toLowerCase().startsWith(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <Container>
@@ -21,7 +31,7 @@ const AppsPage = () => {
             All Apps{" "}
             <span className="text-lg text-gray-400">
               {"("}
-              {apps.length}
+              {filteredApps.length}
               {")"}
             </span>
           </h5>
@@ -44,7 +54,13 @@ const AppsPage = () => {
                   <path d="m21 21-4.3-4.3"></path>
                 </g>
               </svg>
-              <input type="search" required placeholder="Search" />
+              <input
+                type="search"
+                required
+                placeholder="Search"
+                value={searchTerm}
+                onChange={handleSearch}
+              />
             </label>
           </div>
         </div>
@@ -54,7 +70,7 @@ const AppsPage = () => {
             <p>Loading...</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
-              {apps.map((app) => (
+              {filteredApps.map((app) => (
                 <AppsCard key={app.id} app={app} />
               ))}
             </div>
