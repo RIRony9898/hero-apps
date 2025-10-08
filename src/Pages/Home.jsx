@@ -39,21 +39,21 @@ const Home = () => {
      </Container>
      {/* trusted user count banner */}
      <div className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white text-center py-20">
-        <h3 className="text-5xl font-bold">Trusted by Millions, Built for You</h3>
+        <h4 className="text-5xl font-bold">Trusted by Millions, Built for You</h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 px-5 md:px-20">
             <div className="flex flex-col gap-4">
                 <p>Total Downloads</p>
-                <h2 className="text-6xl font-extrabold">29.6M</h2>
+                <h3 className="text-6xl font-extrabold">29.6M</h3>
                 <p>21% more than last month</p>
             </div>
             <div className="flex flex-col gap-4">
                 <p>Total Reviews</p>
-                <h2 className="text-6xl font-extrabold">906K</h2>
+                <h3 className="text-6xl font-extrabold">906K</h3>
                 <p>46% more than last month</p>
             </div>
             <div className="flex flex-col gap-4">
                 <p>Active Apps</p>
-                <h2 className="text-6xl font-extrabold">132+</h2>
+                <h3 className="text-6xl font-extrabold">132+</h3>
                 <p>31 more will Launch</p>
             </div>
         </div>
