@@ -45,8 +45,10 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <Link to="/" className="btn btn-ghost text-xl">
-              Hero Apps
+            {/* logo and site name */}
+            <Link to="/" className="flex items-center gap-2">
+              <img className="w-6" src="/src/assets/logo.png" alt="" />
+              <h3 className="text-2xl font-bold">Hero Apps</h3>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
