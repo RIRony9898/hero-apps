@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
   const { title, image, downloads, ratingAvg } = app;
-  console.log(app);
+  // console.log(app);
   return (
     <Link to={`${app.id}`}>
       <div className="card bg-base-100 shadow-sm border border-gray-200">

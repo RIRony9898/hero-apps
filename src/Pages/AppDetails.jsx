@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useApps from "../hooks/useApps";
 import { Download, Star, UserStar } from "lucide-react";
 import Container from "../Components/Container";
 import RatingChart from "../Components/RatingChart";
+import { InstallationContext } from "../context/InstallationContext";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
   const { apps, loading } = useApps();
-  // console.log(id, apps);
+  const { installedApps, installApp } = useContext(InstallationContext);
+
   const app = apps.find((app) => app.id === parseInt(id));
-  // console.log(app);
 
   if (loading) return <p>Loading.......</p>;
 
   const { title, image, downloads, ratingAvg, description, reviews, size, companyName } = app || {};
+
+  const isInstalled = installedApps.find((installedApp) => installedApp.id === app.id);
+
+  const handleInstall = () => {
+    installApp(app);
+    toast.success(`${title} installed successfully!`);
+  };
+
   return (
     <div>
       <Container>
@@ -49,7 +59,13 @@ const AppDetails = () => {
                 <h5 className="font-extrabold text-4xl">{reviews}</h5>
               </div>
             </div>
-            <button className="btn btn-primary mt-10">Install Now {'('}{size}{')'}</button>
+            <button
+              onClick={handleInstall}
+              disabled={isInstalled}
+              className="btn btn-primary mt-10"
+            >
+              {isInstalled ? "Installed" : `Install Now (${size})`}
+            </button>
           </div>
         </div>
         {/* ratings graph */}
