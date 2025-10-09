@@ -162,7 +162,7 @@ const Navbar = () => {
               </svg>
             </label>
             {/* contribute button */}
-            <Link to={'https://github.com/RIRony9898'} className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><Github />Contribute</Link>
+            <Link to={'https://github.com/RIRony9898'} target="_blank" className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><Github />Contribute</Link>
           </div>
         </div>
       </Container>

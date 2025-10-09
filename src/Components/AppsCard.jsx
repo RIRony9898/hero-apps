@@ -6,7 +6,7 @@ const AppsCard = ({ app }) => {
   const { title, image, downloads, ratingAvg } = app;
   // console.log(app);
   return (
-    <Link to={`${app.id}`}>
+    <Link to={`/apps/${app.id}`}>
       <div className="card bg-base-100 shadow-sm border border-gray-200">
         <figure className="w-60 h-80 mx-auto flex items-center justify-center">
           <img className="object-contain w-full h-full" src={image} alt={title} />
