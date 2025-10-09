@@ -4,7 +4,8 @@ import Container from "./Container";
 import { Github } from "lucide-react";
 
 const Navbar = () => {
-  const activeGradient = "bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text underline";
+  const activeGradient =
+    "bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text underline";
   const normalStyle = "text-gray-700";
   return (
     <div className=" bg-base-100 shadow-sm">
@@ -37,50 +38,61 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
-               <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? activeGradient : normalStyle
-                    } font-medium text-xl`
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? activeGradient : normalStyle
+                      } font-medium text-xl`
+                    }
+                  >
+                    Home
+                  </NavLink>
+                </li>
 
-              <li>
-                <NavLink
-                  to="/apps"
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? activeGradient : normalStyle
-                    } font-medium text-xl`
-                  }
-                >
-                  Apps
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink
+                    to="/apps"
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? activeGradient : normalStyle
+                      } font-medium text-xl`
+                    }
+                  >
+                    Apps
+                  </NavLink>
+                </li>
 
-              <li>
-                <NavLink
-                  to="/installed"
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? activeGradient : normalStyle
-                    } font-medium text-xl`
-                  }
-                >
-                  Installed
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink
+                    to="/installed"
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? activeGradient : normalStyle
+                      } font-medium text-xl`
+                    }
+                  >
+                    Installed
+                  </NavLink>
+                </li>
+                <li>
+                  {/* contribute button */}
+                  <Link
+                    to={"https://github.com/RIRony9898"}
+                    target="_blank"
+                    className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"
+                  >
+                    <Github />
+                    Contribute
+                  </Link>
+                </li>
               </ul>
             </div>
             {/* logo and site name */}
             <Link to="/" className="flex items-center gap-2">
               <img className="w-6" src="/src/assets/logo.png" alt="" />
-              <h3 className="text-2xl font-bold">Hero Apps</h3>
+              <h3 className="text-base md:text-2xl font-bold">Hero Apps</h3>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -162,7 +174,14 @@ const Navbar = () => {
               </svg>
             </label>
             {/* contribute button */}
-            <Link to={'https://github.com/RIRony9898'} target="_blank" className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><Github />Contribute</Link>
+            <Link
+              to={"https://github.com/RIRony9898"}
+              target="_blank"
+              className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white hidden md:flex"
+            >
+              <Github />
+              Contribute
+            </Link>
           </div>
         </div>
       </Container>

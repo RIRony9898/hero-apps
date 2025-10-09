@@ -42,21 +42,21 @@ const AppDetails = () => {
               <h2 className="text-4xl font-bold my-5">{title}</h2>
               <p>Developed by <span className="text-primary">{companyName}</span></p>
             </div>
-            <div className="flex gap-30 my-5 pt-5">
+            <div className="flex gap-4 md:gap-20 lg:gap-30 my-5 pt-5">
               <div className="flex flex-col gap-2">
                 <Download />
                 <p>Downloads</p>
-                <h5 className="font-extrabold text-4xl">{downloads}</h5>
+                <h5 className="font-extrabold text-2xl md:text-4xl">{downloads}</h5>
               </div>
               <div className="flex flex-col gap-2">
                 <Star />
                 <p>Average Ratings</p>
-                <h5 className="font-extrabold text-4xl">{ratingAvg}</h5>
+                <h5 className="font-extrabold text-2xl md:text-4xl">{ratingAvg}</h5>
               </div>
               <div className="flex flex-col gap-2">
                 <UserStar />
                 <p>Total Reviews</p>
-                <h5 className="font-extrabold text-4xl">{reviews}</h5>
+                <h5 className="font-extrabold text-2xl md:text-4xl">{reviews}</h5>
               </div>
             </div>
             <button
