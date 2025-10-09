@@ -30,7 +30,7 @@ const AppDetails = () => {
       <Container>
         {/* app banner section */}
         <div className="flex flex-col md:flex-row gap-30 my-10">
-          <div className="w-72 h-72 flex items-center justify-center">
+          <div className="w-full max-w-xs h-auto flex items-center justify-center mx-auto">
             <img
               className="object-contain w-full h-full"
               src={image}

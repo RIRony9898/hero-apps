@@ -23,7 +23,7 @@ const Home = () => {
           </p>
         </div>
         {/* google app store and apple app store buttons */}
-        <div className="flex justify-center mt-10 gap-5">
+        <div className="flex flex-wrap justify-center mt-10 gap-5 gap-y-4">
           <Link
             to={"https://play.google.com/store/games?hl=en&pli=1"}
             target="_blank"
