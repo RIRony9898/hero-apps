@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import Container from "./Container";
+import { Github } from "lucide-react";
 
 const Navbar = () => {
+  const activeGradient = "bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text underline";
+  const normalStyle = "text-gray-700";
   return (
     <div className=" bg-base-100 shadow-sm">
       <Container>
@@ -34,15 +37,44 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
-                <li>
-                  <NavLink to={"/"}>Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to={"/apps"}>Apps</NavLink>
-                </li>
-                <li>
-                  <NavLink to={"/installed"}>Installed</NavLink>
-                </li>
+               <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/apps"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Apps
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/installed"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Installed
+                </NavLink>
+              </li>
               </ul>
             </div>
             {/* logo and site name */}
@@ -54,13 +86,42 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <NavLink to={"/"}>Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
+
               <li>
-                <NavLink to={"/apps"}>Apps</NavLink>
+                <NavLink
+                  to="/apps"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Apps
+                </NavLink>
               </li>
+
               <li>
-                <NavLink to={"/installed"}>Installed</NavLink>
+                <NavLink
+                  to="/installed"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? activeGradient : normalStyle
+                    } font-medium text-xl`
+                  }
+                >
+                  Installed
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -100,7 +161,8 @@ const Navbar = () => {
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             </label>
-            <a className="btn">Button</a>
+            {/* contribute button */}
+            <Link to={'https://github.com/RIRony9898'} className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><Github />Contribute</Link>
           </div>
         </div>
       </Container>
