@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Container from "../Components/Container";
 import useApps from "../hooks/useApps";
 import AppsCard from "../Components/AppsCard";
+import AppNotFound from "./AppNotFound";
 
 const AppsPage = () => {
   const { apps, loading } = useApps();
@@ -68,12 +69,14 @@ const AppsPage = () => {
         <div>
           {loading ? (
             <p>Loading...</p>
-          ) : (
+          ) : filteredApps.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
               {filteredApps.map((app) => (
                 <AppsCard key={app.id} app={app} />
               ))}
             </div>
+          ) : (
+            <AppNotFound />
           )}
         </div>
       </Container>
