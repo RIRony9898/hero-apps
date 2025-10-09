@@ -90,7 +90,7 @@ const Navbar = () => {
             </div>
             {/* logo and site name */}
             <Link to="/" className="flex items-center gap-2">
-              <img className="w-6" src="/logo.png" alt="" />
+              <img className="w-6" src="/src/assets/logo.png" alt="" />
               <h3 className="text-base md:text-2xl font-bold">Hero Apps</h3>
             </Link>
           </div>
