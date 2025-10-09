@@ -3,13 +3,20 @@ import Container from "../Components/Container";
 import useApps from "../hooks/useApps";
 import AppsCard from "../Components/AppsCard";
 import AppNotFound from "./AppNotFound";
+import { RingLoader } from "react-spinners";
 
 const AppsPage = () => {
   const { apps, loading } = useApps();
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchLoading, setSearchLoading] = useState(false);
 
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+    const value = event.target.value;
+    setSearchLoading(true);
+    setTimeout(() => {
+      setSearchTerm(value);
+      setSearchLoading(false);
+    }, 200); // 0.2 seconds
   };
 
   const filteredApps = apps.filter((app) =>
@@ -67,8 +74,10 @@ const AppsPage = () => {
         </div>
         {/* apps cards */}
         <div>
-          {loading ? (
-            <p>Loading...</p>
+          {loading || searchLoading ? (
+            <div className="flex justify-center items-center h-64">
+              <RingLoader color="#632EE3" size={50} />
+            </div>
           ) : filteredApps.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
               {filteredApps.map((app) => (
