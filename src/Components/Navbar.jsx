@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import Container from "./Container";
 import { Github } from "lucide-react";
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const activeGradient =
@@ -90,7 +91,7 @@ const Navbar = () => {
             </div>
             {/* logo and site name */}
             <Link to="/" className="flex items-center gap-2">
-              <img className="w-6" src="/src/assets/logo.png" alt="" />
+              <img className="w-6" src={logo} alt="" />
               <h3 className="text-base md:text-2xl font-bold">Hero Apps</h3>
             </Link>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import { Link } from "react-router";
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-base-300 pb-8 mb-8">
           {/* Branding */}
           <Link to="/" className="flex items-center gap-2">
-            <img className="w-10" src="/src/assets/logo.png" alt="Hero Apps Logo" />
+            <img className="w-10" src={logo} alt="Hero Apps Logo" />
             <h3 className="text-2xl font-bold">Hero Apps</h3>
           </Link>
 
