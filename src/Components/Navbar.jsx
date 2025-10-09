@@ -40,11 +40,10 @@ const Navbar = () => {
               >
                 <li>
                   <NavLink
-                    to="/"
                     className={({ isActive }) =>
                       `${
                         isActive ? activeGradient : normalStyle
-                      } font-medium text-xl`
+                      } font-medium text-lg`
                     }
                   >
                     Home
