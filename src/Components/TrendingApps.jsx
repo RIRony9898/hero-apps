@@ -14,7 +14,7 @@ const TrendingApps = () => {
       const downloadsB = parseInt(b.downloads.replace("M", ""));
       return downloadsB - downloadsA;
     })
-    .slice(0, 9);
+    .slice(0, 8);
 
   return (
     <div>
@@ -22,7 +22,7 @@ const TrendingApps = () => {
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-10">
               {trendingApps.map((app) => (
                 <AppsCard key={app.id} app={app} />
               ))}
